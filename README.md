@@ -1,14 +1,10 @@
 # Decentralized Voting System
 
   ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/hugoforestier/decentralized_voting_system?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/hugoforestier/decentralized_voting_system?style=flat&logo=appveyor)
-  
-  Check out the badges hosted by [shields.io](https://shields.io/).
-  
+    
   
   ## Description 
-  
-  *The what, why, and how:* 
-  
+    
   Website that uses the Ethereum blockchain to create a decentralized voting system
 
   ## Table of Contents
@@ -36,9 +32,10 @@
   
   ## Questions?
 
-  <img src="https://avatars.githubusercontent.com/u/62436508?v=4" alt="hugoforestier" width="40%" />
+  <img src="https://avatars.githubusercontent.com/u/62436508?v=4" alt="hugoforestier" width="30%" />
   
   For any questions, please contact me with the information below:
  
   GitHub: [@hugoforestier](https://api.github.com/users/hugoforestier)
+  Twitter: [@forestierhugo0](https://twitter.com/forestierhug0)
   
