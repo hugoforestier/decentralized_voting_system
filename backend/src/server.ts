@@ -6,10 +6,13 @@ import helmet from "helmet";
 import StatusCodes from "http-status-codes";
 import mongoose from "mongoose";
 import morgan from "morgan";
+import passport from "pre-start/passport/passport.init";
 import BaseRouter from "routes/index";
 import logger from "shared/Logger";
 
 const app = express();
+
+passport(app);
 
 const PORT = process.env.MONGODB_PORT || 3000;
 const MONGODB_URI =
@@ -25,8 +28,6 @@ mongoose.connect(
             password: process.env.MONGO_INITDB_ROOT_PASSWORD || "12345",
         },
         authSource: "admin",
-        //useNewUrlParser: true,
-        //useUnifiedTopology: true,
     },
     (err) => {
         if (err) {
@@ -34,7 +35,7 @@ mongoose.connect(
             console.error(err);
         } else {
             console.log("mongodb is running and secured");
-            //app.listen(PORT);
+            app.listen(PORT);
         }
     }
 );
