@@ -1,0 +1,104 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.register {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1vw;
+}
+
+.form-title {
+    color: #eaf3fa;
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-size: 2vw;
+    font-style: italic;
+}
+
+.register-bold {
+    color: #eaf3fa;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 3px;
+}
+
+.form-label {
+    align-self: start;
+    font-weight: 800;
+}
+
+.text-field {
+    width: 90%;
+    height: 40px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: solid 2px rgba(0, 0, 0, 0.15);
+    padding: 0px 13px;
+    background-color: #eaf3fa;
+    margin-top: 3px;
+    font-size: 1.2vw;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.text-field:focus {
+    outline: none;
+}
+
+.login-button {
+    border-radius: 40px;
+    padding: 10px 10px;
+    width: 100%;
+    border: none;
+    background-color: #2d3b63;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 1.3vw;
+    color: #eaf3fa;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.login-button:hover {
+    background: #00c947;
+}
+
+.back-arrow {
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: -4%;
+    align-self: flex-start;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 425px) {
+    .login-button {
+        font-size: 2.4vw;
+    }
+    .text-field {
+        font-size: 2.4vw;
+    }
+    .form-title {
+        font-size: 4vw;
+    }
+    .register {
+        font-size: 2.5vw;
+    }
+}

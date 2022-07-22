@@ -9,11 +9,15 @@ import morgan from "morgan";
 import passport from "pre-start/passport/passport.init";
 import BaseRouter from "routes/index";
 import logger from "shared/Logger";
+import Web3 from "web3";
 
 const app = express();
 
 passport(app);
 
+var web3 = new Web3(Web3.givenProvider || "ws://localhost:8546");
+
+console.log(web3.version);
 const PORT = process.env.MONGODB_PORT || 3000;
 const MONGODB_URI =
     process.env.MONGODB_URI ||

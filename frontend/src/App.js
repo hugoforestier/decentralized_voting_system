@@ -1,79 +1,23 @@
-// Importing modules
-//import "bootstrap/dist/css/bootstrap.min.css";
-import { ethers } from "ethers";
-import React, { useState } from "react";
-import { Button, Card } from "react-bootstrap";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import Error404 from "./Error404/Error404";
+import Landing from "./Landing/Landing";
+import LoginForm from "./Login/LoginForm";
 
 function App() {
-    // usetstate for storing and retrieving wallet details
-    const [data, setdata] = useState({
-        address: "",
-        Balance: null,
-    });
-
-    // Button handler button for handling a
-    // request event for metamask
-    const btnhandler = () => {
-        // Asking if metamask is already present or not
-        if (window.ethereum) {
-            // res[0] for fetching a first wallet
-            window.ethereum
-                .request({ method: "eth_requestAccounts" })
-                .then((res) => accountChangeHandler(res[0]));
-        } else {
-            alert("install metamask extension!!");
-        }
-    };
-
-    // getbalance function for getting a balance in
-    // a right format with help of ethers
-    const getbalance = (address) => {
-        // Requesting balance method
-        window.ethereum
-            .request({
-                method: "eth_getBalance",
-                params: [address, "latest"],
-            })
-            .then((balance) => {
-                // Setting balance
-                setdata({
-                    Balance: ethers.utils.formatEther(balance),
-                });
-            });
-    };
-
-    // Function for getting handling all events
-    const accountChangeHandler = (account) => {
-        // Setting an address data
-        setdata({
-            address: account,
-        });
-
-        // Setting a balance
-        getbalance(account);
-    };
-
     return (
         <div className="App">
-            {/* Calling all values which we
-	have stored in usestate */}
-
-            <Card className="text-center">
-                <Card.Header>
-                    <strong>Address: </strong>
-                    {data.address}
-                </Card.Header>
-                <Card.Body>
-                    <Card.Text>
-                        <strong>Balance: </strong>
-                        {data.Balance}
-                    </Card.Text>
-                    <Button onClick={btnhandler} variant="primary">
-                        Connect to wallet
-                    </Button>
-                </Card.Body>
-            </Card>
+            <ToastContainer />
+            <BrowserRouter>
+                <Routes>
+                    <Route exact path="/" element={<Landing />} />
+                    <Route exact path="/login" element={<LoginForm />} />
+                    <Route exact path="/404/" element={<Error404 />} />
+                    <Route path="*" element={<Error404 />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }
